@@ -1,0 +1,181 @@
+/* Modern Reset & CSS Variables */
+:root {
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --primary: #2b59c3;
+  --primary-hover: #1e3f8a;
+  --danger: #dc3545;
+  --danger-hover: #bd2130;
+  --border-color: #dee2e6;
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem;
+  height: 100dvh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Typography & Navigation links */
+h1 {
+  font-size: 2.25rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Action Bars / Menus */
+.action-bar {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Lists and Cards grid */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+li {
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  background: #e2e8f0;
+  color: #475569;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Forms */
+form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(43, 89, 195, 0.15);
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+button, .btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--primary-hover);
+}
+
+button.btn-danger {
+  background-color: var(--danger);
+}
+
+button.btn-danger:hover {
+  background-color: var(--danger-hover);
+}

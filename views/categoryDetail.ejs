@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>
+        <%= category.name %>
+    </title>
+</head>
+
+<body>
+    <a href="/categories">⬅Back to Dashboard</a>
+    <h1>Category: <%= category.name %>
+    </h1>
+    <p>
+        <%= category.description %>
+    </p>
+
+    <h3>Available Stock Items</h3>
+    <% if (instruments.length===0) { %>
+        <p>No instruments listed here yet.</p>
+        <form action="/categories/<%= category.id %>/delete" method="POST">
+            <button type="submit" style="color: red;">Delete Empty Category</button>
+        </form>
+        <% } else { %>
+            <ul>
+                <% instruments.forEach(item=> { %>
+                    <li>
+                        <a href="/instruments/<%= item.id %>">
+                            <%= item.brand_name %> - <%= item.name %>
+                        </a>
+                        | KES <%= item.price %> (Qty: <%= item.stock_quantity %>)
+                    </li>
+                    <% }) %>
+            </ul>
+            <p><em>Note: You cannot delete this category until all internal items are deleted or moved.</em></p>
+            <% } %>
+</body>
+
+</html>
